@@ -230,6 +230,53 @@
       .boat-name { font-size:7px; }
       .river-footer { font-size:8px; }
     }
+
+    /* MOON//FLOAT 2.0 — handmade 2D / top-view river */
+    :root { --bg:#080d20; --panel:#111b34; --panel-2:#152442; --line:rgba(132,190,207,.25); --mint:#55d9cf; --pink:#ff5dab; --gold:#f5c65b; --white:#f4ebd9; --muted:#a0a9bb; }
+    body { background:#080d20; }
+    body::before { opacity:.08; background-size:8px 8px; }
+    .panel { background:#111b34; border:1px solid #35445f; border-radius:9px; box-shadow:5px 5px 0 rgba(0,0,0,.24); }
+    .panel::before { display:none; }
+    .panel-head { border-bottom:1px solid #35445f; }
+    .panel-title,.brand-name { letter-spacing:.04em; }
+    .brand-mark { background:#ff5dab; color:#080d20; border:2px solid #f4ebd9; border-radius:7px; box-shadow:3px 3px 0 #080d20; }
+    h1 em { color:#ff5dab; text-shadow:none; }
+    .hero-note b { color:#f5c65b; }
+    .ghost-btn { color:#080d20; background:#b9e85a; border:2px solid #080d20; border-radius:6px; box-shadow:3px 3px 0 #35445f; font-weight:700; }
+    .ghost-btn:hover { color:#080d20; background:#d3f18a; box-shadow:2px 2px 0 #35445f; }
+    .river-scene { background-color:#152442; background-image:repeating-linear-gradient(8deg,transparent 0 58px,rgba(85,217,207,.10) 59px 61px,transparent 62px 118px),repeating-linear-gradient(176deg,transparent 0 93px,rgba(244,235,217,.06) 94px 96px,transparent 97px 164px); }
+    .river-scene::before { opacity:.18; background-image:radial-gradient(#b9e85a 1px,transparent 1.6px); background-size:29px 29px; mask-image:none; }
+    .river-scene::after { opacity:.1; background-image:repeating-linear-gradient(90deg,transparent 0 34px,rgba(85,217,207,.35) 35px 36px,transparent 37px 72px); mask-image:none; }
+    .moon { width:62px; height:62px; top:24px; right:8%; background:#f5c65b; border:3px solid #f4ebd9; box-shadow:4px 4px 0 rgba(8,13,32,.5); opacity:1; }
+    .moon::after { background:rgba(21,36,66,.10); box-shadow:20px 12px 0 -5px rgba(21,36,66,.10),8px 34px 0 -8px rgba(21,36,66,.10); }
+    .moon-label { top:92px; right:6%; color:#f4ebd9; font-size:8px; }
+    .skyline { display:none; }
+    .water { inset:0; background:transparent; }
+    .water::before { opacity:.38; background:repeating-radial-gradient(ellipse at 48% 52%,transparent 0 32px,rgba(85,217,207,.16) 33px 35px,transparent 36px 74px); animation:waterMove 26s linear infinite; }
+    .water::after { opacity:.12; background-image:radial-gradient(#55d9cf 1px,transparent 1.8px); background-size:13px 13px; }
+    .wave { border-top:2px solid rgba(85,217,207,.24); }
+    .boat { width:112px; height:116px; filter:drop-shadow(3px 5px 0 rgba(4,10,24,.25)); animation:boatBob 5.2s ease-in-out infinite, boatDrift 8s ease-in-out infinite; }
+    .boat-photo { top:34px; left:50%; width:30px; height:30px; border:2px solid #f4ebd9; border-radius:50%; background:#ff5dab; box-shadow:2px 2px 0 #080d20; }
+    .boat-bowl { width:82px; height:72px; left:calc(50% - 41px); bottom:22px; border-radius:50%; background:#b9e85a; border:3px solid #f4ebd9; box-shadow:inset 0 0 0 4px #5e9c64,3px 4px 0 #080d20; }
+    .boat-bowl::before { left:4px; top:4px; width:calc(100% - 8px); height:calc(100% - 8px); border:2px dashed rgba(8,13,32,.5); border-radius:50%; background:repeating-conic-gradient(from 0deg,#b9e85a 0 18deg,#6ea96b 18deg 36deg); box-shadow:none; }
+    .boat-bowl.type-lotus { background:#ff9bc8; border-color:#f4ebd9; }
+    .boat-bowl.type-lotus::before { background:repeating-conic-gradient(#ffd0e4 0 18deg,#e978ac 18deg 36deg); }
+    .boat-bowl.type-cyber { background:#55d9cf; border-color:#f4ebd9; }
+    .boat-bowl.type-cyber::before { background:repeating-conic-gradient(#b2fff1 0 18deg,#4ca2ba 18deg 36deg); }
+    .boat-flame { top:21px; left:calc(50% - 4px); width:9px; height:13px; }
+    .boat-name { bottom:0; color:#080d20; background:#f4ebd9; border:2px solid #080d20; border-radius:4px; font:700 8px var(--mono); padding:3px 6px; }
+    .boat-stickers { top:15px; }
+    .detail-card { background:#f4ebd9; color:#152442; border:2px solid #080d20; border-radius:8px; box-shadow:4px 4px 0 #080d20; }
+    .detail-tag,.detail-name,.detail-wish,.detail-hint { color:#152442; }
+    .detail-time { color:#58657b; }
+    .save-btn { background:#b9e85a; border:2px solid #080d20; border-radius:5px; }
+    .river-footer { background:#111b34; border-top:1px solid #35445f; }
+    .launch-btn { color:#080d20; background:#b9e85a; border:2px solid #080d20; border-radius:6px; box-shadow:3px 3px 0 #35445f; }
+    .choice,.text-input,.wish-input,.sticker { border-radius:6px; }
+    .choice.active { color:#080d20; background:#b9e85a; border-color:#080d20; box-shadow:2px 2px 0 #35445f; }
+    @keyframes boatDrift { 0%,100% { margin-left:-22px; } 50% { margin-left:22px; } }
+    @media (max-width:430px) { .boat { width:92px; height:108px; } .boat-bowl { width:70px; height:64px; left:calc(50% - 35px); } .boat-photo { top:34px; } }
+    @media (prefers-reduced-motion: reduce) { .boat { animation:none; } }
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; } }
   </style>
 </head>
@@ -241,12 +288,7 @@
         <div><div class="brand-name">MOON<span>//</span>FLOAT</div><div class="brand-sub">DIGITAL LOY KRATHONG CLUB · 2026</div></div>
       </div>
       <div class="top-actions">
-        <div class="room-pill">
-          <label for="roomCode">ROOM ID</label>
-          <input id="roomCode" value="moon-crew10" maxlength="22" aria-label="รหัสห้อง">
-          <button class="tiny-btn" id="joinRoomBtn" type="button">JOIN ↗</button>
-        </div>
-        <button class="ghost-btn" id="copyRoomBtn" type="button">COPY INVITE</button>
+        <button class="ghost-btn" id="copyRoomBtn" type="button">↗ COPY SHARED LINK</button>
         <div class="status" id="connectionStatus"><span class="status-dot"></span><span id="statusText">DEMO MODE</span></div>
       </div>
     </header>
@@ -339,7 +381,7 @@
       </section>
 
       <section class="panel river-panel">
-        <div class="panel-head"><div class="panel-title">02 / THE FLOATING RIVER</div><div class="river-head-right"><span>LIVE STREAM</span><span>·</span><span class="count" id="boatCount">03 / 30 BOATS</span></div></div>
+        <div class="panel-head"><div class="panel-title">02 / THE FLOATING RIVER</div><div class="river-head-right"><span>LIVE STREAM</span><span>·</span><span class="count" id="boatCount">03 / 15 BOATS</span></div></div>
         <div class="river-scene" id="riverScene">
           <div class="river-caption">NIGHT MODE // CHAO PHRAYA.exe</div>
           <div class="moon"></div><div class="moon-label">MOON PHASE : WISHING</div>
@@ -355,7 +397,7 @@
             <div class="detail-actions"><span class="detail-hint" id="detailHint">A LITTLE LIGHT ON THE WATER</span><button class="save-btn" id="saveImageBtn" type="button">↓ SAVE PNG</button></div>
           </aside>
         </div>
-        <div class="river-footer"><span><strong id="roomFooter">ROOM: MOON-CREW10</strong> · LAST 30 WISHES</span><span>HOVER / TAP A BOAT TO READ <strong>✧</strong></span></div>
+        <div class="river-footer"><span><strong id="roomFooter">ROOM: MOON-CREW10</strong> · LATEST 15 FLOATS</span><span>HOVER / TAP A BOAT TO READ <strong>✧</strong></span></div>
       </section>
     </main>
     <p class="footnote">MADE OF LEAF, LIGHT & LITTLE WISHES <span>✦</span> MOON//FLOAT 2026 <span>·</span> KEEP THE NIGHT KIND.</p>
@@ -372,17 +414,14 @@
     let firebaseModules = {};
 
     const firebaseConfig = {
-  apiKey: "AIzaSyD9NiU04KXbSeRAbCbF7fUuNE1wEJAnmsM",
-  authDomain: "loykrathong-94964.firebaseapp.com",
-  projectId: "loykrathong-94964",
-  storageBucket: "loykrathong-94964.firebasestorage.app",
-  messagingSenderId: "577253888845",
-  appId: "1:577253888845:web:0775bcf5af993ca1005d04",
-  measurementId: "G-T65QY3WLZ4"
-};
+      apiKey: "PASTE_YOUR_API_KEY",
+      authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
+      projectId: "PASTE_YOUR_PROJECT_ID",
+      appId: "PASTE_YOUR_APP_ID"
+    };
 
     const MAX_IMAGE_BYTES = 140 * 1024;
-    const MAX_VISIBLE_BOATS = 30;
+    const MAX_VISIBLE_BOATS = 15;
     const DEMO_UID = "local-demo-user";
     const $ = (id) => document.getElementById(id);
     const state = {
@@ -593,9 +632,9 @@
         button.addEventListener("click",() => { state.pinnedDetail = true; showBoatDetail(boat,true); });
         button.addEventListener("keydown",(event) => { if (event.key === "Escape") hideBoatDetail(); });
       });
-      $("boatCount").textContent = `${String(boats.length).padStart(2,"0")} / 30 BOATS`;
+      $("boatCount").textContent = `${String(boats.length).padStart(2,"0")} / 15 BOATS`;
       $("emptyState").hidden = boats.length > 0;
-      $("roomFooter").textContent = `ROOM: ${state.room.toUpperCase()}`;
+      $("roomFooter").textContent = "ONE SHARED RIVER";
       if (state.selectedBoat && !boats.some(b => b.id === state.selectedBoat.id)) hideBoatDetail();
     }
 
@@ -709,17 +748,6 @@
       } finally {button.disabled=false;button.innerHTML="<span>↗</span> ลอยกระทงของฉัน <span>✦</span>";}
     }
 
-    function joinRoom() {
-      const next=$("roomCode").value.trim().toLowerCase();
-      if(!/^[a-z0-9-]{3,22}$/.test(next)){toast("รหัสห้องใช้ a-z, 0-9 หรือ - ความยาว 3–22 ตัว");return;}
-      state.room=next;
-      try{localStorage.setItem("moonfloat-room",next);}catch{}
-      hideBoatDetail();
-      if(state.firebaseReady)listenToRoom();
-      else{state.currentBoats=seedDemoBoats();renderBoats();}
-      toast(`เข้าห้อง ${next} แล้ว — ส่งรหัสนี้ให้เพื่อนได้เลย`);
-    }
-
     // UI events
     bindChoices("frameChoices","frame","frame");
     bindChoices("boatChoices","boat","boatType");
@@ -743,12 +771,10 @@
     });
     $("randomWish").addEventListener("click",()=>{$("wish").value=wishes[Math.floor(Math.random()*wishes.length)];$("wish").dispatchEvent(new Event("input"));});
     $("launchBtn").addEventListener("click",launchKrathong);
-    $("joinRoomBtn").addEventListener("click",joinRoom);
-    $("roomCode").addEventListener("keydown",event=>{if(event.key==="Enter")joinRoom();});
     $("copyRoomBtn").addEventListener("click",async()=>{
-      const url=new URL(location.href);url.searchParams.set("room",state.room);
-      try{await navigator.clipboard.writeText(url.toString());toast("คัดลอกลิงก์ชวนเพื่อนแล้ว");}
-      catch{toast(`ส่งรหัสห้อง ${state.room} ให้เพื่อนเพื่อเข้าห้องเดียวกัน`);}
+      const url=new URL(location.href);url.search="";url.hash="";
+      try{await navigator.clipboard.writeText(url.toString());toast("คัดลอกลิงก์กลางแล้ว ส่งให้เพื่อนกดเข้าได้เลย ✦");}
+      catch{toast("คัดลอก URL จากแถบที่อยู่ของเบราว์เซอร์เพื่อแชร์ให้เพื่อนได้เลย");}
     });
     $("closeDetail").addEventListener("click",hideBoatDetail);
     window.addEventListener("resize",()=>{ if(state.currentBoats.length) renderBoats(); });
@@ -757,14 +783,8 @@
       try{await saveKrathongImage(state.selectedBoat);}catch(error){console.error(error);toast("บันทึกภาพไม่สำเร็จ");}
     });
 
-    // Restore room id from URL/local storage before connecting.
-    try {
-      const urlRoom=new URLSearchParams(location.search).get("room");
-      const savedRoom=localStorage.getItem("moonfloat-room");
-      const candidate=(urlRoom||savedRoom||"moon-crew10").toLowerCase();
-      if(/^[a-z0-9-]{3,22}$/.test(candidate))state.room=candidate;
-    } catch {}
-    $("roomCode").value=state.room;
+    // One shared river for everyone using this deployed link.
+    // Keep the existing room id so previously stored MOON//FLOAT boats remain visible.
     updateMiniPreview();
     await connectFirebase();
   </script>
